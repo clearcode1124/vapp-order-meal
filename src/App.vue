@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <!-- <x-button type="primary" @click.native="test">submit</x-button>
-    <h1>{{ content }}</h1>-->
     <div class="header"></div>
     <div class="content">
       <router-view class="main-view"></router-view>
     </div>
     <div class="footer">
       <div class="bottom-tabbar" @click="bottomTab(1)">
-        <img class="bottom-tabbar-img" slot="icon" src="./assets/rice-100.png">
+        <img class="bottom-tabbar-img" slot="icon" :src="riceImg">
       </div>
       <div class="bottom-tabbar" @click="bottomTab(2)">
-        <img class="bottom-tabbar-img" slot="icon" src="./assets/user-96.png">
+        <img class="bottom-tabbar-img" slot="icon" :src="userImg">
       </div>
     </div>
   </div>
@@ -22,14 +20,20 @@ export default {
   name: "App",
   data() {
     return {
-      content: "aaa"
+      riceImg: require("./assets/rice-100.png"),
+      userImg: require("./assets/user-simple-128.png")
     };
   },
   methods: {
     bottomTab(id) {
       var name = "Order";
       if (id == 2) {
+        this.riceImg = require("./assets/rice-simple-128.png");
+        this.userImg = require("./assets/user-96.png");
         name = "User";
+      } else {
+        this.riceImg = require("./assets/rice-100.png");
+        this.userImg = require("./assets/user-simple-128.png");
       }
       this.$router.push({
         name: name
@@ -59,7 +63,7 @@ body {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  background-color: #f9ffea;
+  background-color: #fffdf6;
 }
 .header {
   width: 100%;
@@ -79,7 +83,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #a6d0e4;
+  background-color: #494949;
 }
 .bottom-tabbar {
   width: 50%;
@@ -88,7 +92,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #a6d0e4;
+  background-color: #494949;
 }
 .bottom-tabbar-img {
   width: 20%;

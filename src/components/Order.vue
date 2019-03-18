@@ -113,7 +113,7 @@ export default {
   width: 95%;
 }
 .order-group-item {
-  background-color: #ffecda;
+  background-color: #fffdf6;
 }
 .order-btn {
   width: 60%;

@@ -32,9 +32,9 @@ export default {
   justify-content: flex-start;
   align-items: center;
   margin-top: 50px;
-  background-color: #ffecda;
+  /* background-color: #ffecda; */
 }
 .user-info-cell {
-  background-color: #ffecda;
+  background-color: #fffdf6;
 }
 </style>
