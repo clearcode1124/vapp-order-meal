@@ -59,15 +59,14 @@ body {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  background-color: #fcf3ca;
+  background-color: #f9ffea;
 }
 .header {
   width: 100%;
-  height: 5%;
 }
 .content {
   width: 100%;
-  height: 85%;
+  height: 90%;
 }
 .main-view {
   width: 100%;
@@ -76,11 +75,11 @@ body {
 .footer {
   width: 100%;
   height: 10%;
-  background-color: #6bd5e1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #a6d0e4;
 }
 .bottom-tabbar {
   width: 50%;
@@ -89,7 +88,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #6bd5e1;
+  background-color: #a6d0e4;
 }
 .bottom-tabbar-img {
   width: 20%;
