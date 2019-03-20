@@ -1,7 +1,7 @@
 <template>
   <div id="user">
     <div class="user-info">
-      <img src="http://images.clearcode.top/logo.png" style="width: 20%; height: 6%; padding: 15px;">
+      <img :src="avatar" style="width: 20%; height: 6%; padding: 15px;">
       <h3 style="margin-left: 5px;">{{ username }}</h3>
     </div>
     <group>
@@ -15,7 +15,14 @@
 export default {
   name: "User",
   data() {
-    return { username: "admin" };
+    return {
+      username: "",
+      avatar: "http://images.clearcode.top/logo.png"
+    };
+  },
+  mounted: function() {
+    this.username = this.$cookies.get("username");
+    this.avatar = this.$cookies.get("avatar");
   }
 };
 </script>

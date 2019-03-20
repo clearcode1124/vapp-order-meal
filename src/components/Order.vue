@@ -16,7 +16,6 @@
           disable-past
           disable-now
           :display-format="displayFormat"
-          placeholder="placeholder"
           @on-change="onDateChange"
           v-model="breakfastDate"
           :title="$t('Breakfast')"
@@ -26,7 +25,6 @@
           class="order-group-item"
           disable-weekend
           :display-format="displayFormat"
-          placeholder="placeholder"
           @on-change="onDateChange"
           v-model="lunchDate"
           :title="$t('Lunch')"
@@ -36,7 +34,6 @@
           class="order-group-item"
           disable-weekend
           :display-format="displayFormat"
-          placeholder="placeholder"
           @on-change="onDateChange"
           v-model="dinnerDate"
           :title="$t('Dinner')"

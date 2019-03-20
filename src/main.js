@@ -2,7 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import * as dd from 'dingtalk-jsapi'
 import router from './router'
+import axios from 'axios'
+import cookies from 'vue-cookies'
 import vuexI18n from 'vuex-i18n'
 import {
   XButton,
@@ -25,6 +28,10 @@ Vue.component('calendar', Calendar)
 Vue.component('group', Group)
 Vue.component('x-switch', XSwitch)
 Vue.component('cell', Cell)
+
+Vue.prototype.$dd = dd
+Vue.prototype.$http = axios
+Vue.prototype.$cookies = cookies
 
 Vue.config.productionTip = false
 
