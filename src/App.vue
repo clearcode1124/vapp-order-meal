@@ -63,8 +63,8 @@ export default {
                 that.$http
                   .post("/api/v1/auth/login?requestAuthCode=" + info.code)
                   .then(res => {
-                    that.$cookies.set("username", res.data.name, 60 * 60 * 12);
-                    that.$cookies.set("avatar", res.data.avatar, 60 * 60 * 12);
+                    that.$cookies.remove("user");
+                    that.$cookies.set("user", res.data.user, 60 * 5);
                   });
               },
               onFail: function(err) {

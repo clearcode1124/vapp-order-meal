@@ -16,13 +16,20 @@ export default {
   name: "User",
   data() {
     return {
-      username: "",
-      avatar: "http://images.clearcode.top/logo.png"
+      username: "匿名用户",
+      avatar: "http://images.clearcode.top/avatar.png"
     };
   },
   mounted: function() {
-    this.username = this.$cookies.get("username");
-    this.avatar = this.$cookies.get("avatar");
+    var user = this.$cookies.get("user");
+    var username = user.name;
+    var avatar = user.avatar;
+    if (username != undefined) {
+      this.username = username;
+    }
+    if (avatar != undefined) {
+      this.avatar = avatar;
+    }
   }
 };
 </script>
@@ -38,7 +45,7 @@ export default {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 5px;
   /* background-color: #ffecda; */
 }
 .user-info-cell {
