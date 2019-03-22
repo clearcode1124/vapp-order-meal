@@ -21,7 +21,8 @@ export default {
     };
   },
   mounted: function() {
-    var user = this.$cookies.get("user");
+    var userStr = window.localStorage.getItem("user");
+    var user = JSON.parse(userStr);
     var username = user.name;
     var avatar = user.avatar;
     if (username != undefined) {
@@ -33,14 +34,9 @@ export default {
   },
   methods: {
     userClick(option) {
-      var token = this.$cookies.get("token");
-      alert(token);
-      var instance = this.$http.create({
-        baseURL: "/api/v1",
-        timeout: 10000,
-        headers: { Authorization: "Bearer " + token }
+      this.$http.post("/orders").then(res => {
+        alert(res.data.detail);
       });
-      instance.post("/orders").then(res => {alert.res.data});
     }
   }
 };

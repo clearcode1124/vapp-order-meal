@@ -25,7 +25,7 @@ export default {
     };
   },
   mounted: function() {
-    this.autoLogin();
+    // this.autoLogin();
   },
   methods: {
     autoLogin() {
@@ -61,7 +61,7 @@ export default {
                 // let code = info.code; // 通过该免登授权码可以获取用户身份
                 // alert(info.code);
                 that.$http
-                  .post("/api/v1/auth/login?requestAuthCode=" + info.code)
+                  .post("/auth/login?requestAuthCode=" + info.code)
                   .then(res => {
                     that.$cookies.remove("user");
                     that.$cookies.set("user", res.data.user, 60 * 5);
@@ -81,9 +81,6 @@ export default {
           console.info("调用失败");
         }
       );
-    },
-    getCookies() {
-      this.name = this.$cookies.get("username");
     },
     bottomTab(id) {
       var name = "Order";
