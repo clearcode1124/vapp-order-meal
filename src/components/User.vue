@@ -5,8 +5,8 @@
       <h3 style="margin-left: 5px;">{{ username }}</h3>
     </div>
     <group>
-      <cell class="user-info-cell" title="账单" value="value" is-link></cell>
-      <cell class="user-info-cell" title="我的报餐" value="value" is-link></cell>
+      <cell class="user-info-cell" title="账单" is-link @click.native="userClick(1)"></cell>
+      <cell class="user-info-cell" title="我的报餐" is-link @click.native="userClick(2)"></cell>
     </group>
   </div>
 </template>
@@ -29,6 +29,18 @@ export default {
     }
     if (avatar != undefined) {
       this.avatar = avatar;
+    }
+  },
+  methods: {
+    userClick(option) {
+      var token = this.$cookies.get("token");
+      alert(token);
+      var instance = this.$http.create({
+        baseURL: "/api/v1",
+        timeout: 10000,
+        headers: { Authorization: "Bearer " + token }
+      });
+      instance.post("/orders").then(res => {alert.res.data});
     }
   }
 };

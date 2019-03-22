@@ -65,6 +65,7 @@ export default {
                   .then(res => {
                     that.$cookies.remove("user");
                     that.$cookies.set("user", res.data.user, 60 * 5);
+                    that.$cookies.set("token", res.data.detail, 60 * 5);
                   });
               },
               onFail: function(err) {
